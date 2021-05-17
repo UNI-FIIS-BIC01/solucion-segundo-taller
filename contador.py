@@ -1,4 +1,4 @@
-
+import string
 
 def contador_letras(cadena_de_caracteres):
     """
@@ -23,6 +23,21 @@ def contador_letras(cadena_de_caracteres):
             resultado.append(tupla_frecuencias)
     
     return resultado 
+
+def es_pangrama(cadena_de_caracteres):
+    """
+    cadena_de_caracteres: string.
+    resultado: Booleano
+    """
+    
+    cadena_de_caracteres = cadena_de_caracteres.lower()
+    todas_las_letras = string.ascii_lowercase
+    
+    for letra in todas_las_letras:
+        if letra not in cadena_de_caracteres:
+            return False
+    
+    return True
     
 
 def iniciar():
@@ -31,8 +46,7 @@ def iniciar():
 
 if __name__ == "__main__":
     # iniciar()
-    print(contador_letras("Hay, hermanos, muchisimo que hacer."))
+    print(es_pangrama("Hay, hermanos, muchisimo que hacer."))
     
-    # En consola: [('a', 3), ('c', 2), ('e', 3), ('h', 4), ('i', 2), ('m', 3), ('n', 1), ('o', 2), ('q', 1), ('r', 2),
-    # ('s', 2), ('u', 2), ('y', 1)]
+    # En consola: True
     
