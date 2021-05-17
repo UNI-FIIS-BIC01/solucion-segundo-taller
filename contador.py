@@ -44,7 +44,6 @@ def iniciar():
     
     texto_del_usuario = input("Ingrese texto:")
     lista_de_tuplas = contador_letras(texto_del_usuario)
-    print(lista_de_tuplas)
     
     for tupla in lista_de_tuplas:
         letra = tupla[0]
