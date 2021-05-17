@@ -41,12 +41,24 @@ def es_pangrama(cadena_de_caracteres):
     
 
 def iniciar():
+    
+    texto_del_usuario = input("Ingrese texto:")
+    lista_de_tuplas = contador_letras(texto_del_usuario)
+    print(lista_de_tuplas)
+    
+    for tupla in lista_de_tuplas:
+        letra = tupla[0]
+        frecuencia = tupla[1]
+        print(f"Letra: {letra} frecuencia: {frecuencia}")
+        
+    if es_pangrama(texto_del_usuario):
+        print("El texto contiene TODAS las letras del alfabeto")
+    
     return
 
 
 if __name__ == "__main__":
-    # iniciar()
-    print(es_pangrama("Hay, hermanos, muchisimo que hacer."))
-    
+    iniciar()
+    # print(es_pangrama("Hay, hermanos, muchisimo que hacer."))
     # En consola: True
     
